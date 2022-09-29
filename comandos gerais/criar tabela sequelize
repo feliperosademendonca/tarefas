@@ -1,0 +1,17 @@
+
+/*
+//criar tabela pelo sequelize
+const tarefas= sequelize.define('tarefas',{
+    //atributos
+    titulo: {
+        type: Sequelize.STRING,
+    },
+    descricao:{
+        type: Sequelize.STRING,
+    },
+
+    //options
+});
+
+//projetoToDo.sync({force:true});
+ */

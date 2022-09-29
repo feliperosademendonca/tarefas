@@ -1,0 +1,23 @@
+<h2>Lista de Tarefas</h2>
+<table class="table">
+        <tr>
+            <th>id</th><th>Tarefas</th><th>Descrição</th><th>Criado</th>
+            </tr>
+    {{#each tarefas}}
+        <tr>
+            <td id="txtTitulo">{{id}}</td>
+            <td id="txtTitulo">{{titulo}}</td>
+            <td id="txtDescricao" >{{descricao}}</td>
+            <td id="criado" >{{#formDate createdAt}}{{/formDate}}</td>
+            
+            <td><a><button type="submit" class="btn btn-success">Concluir</button></a></td>
+            <td><a href="update/{{id}}"><button type="submit"class="btn btn-primary">Editar</button></a></td>
+            <td><a href="del/{{id}}"><button type="submit"class="btn btn-danger">Deletar</button> </a></td>
+        </tr>
+    {{/each}}
+  
+     <!--  {{#each tarefas}}
+        titulo: {{titulo}} <br>
+        Descrição: {{descricao}}<br>
+        Criado: {{createdAt}}<br>
+    {{/each}}-->

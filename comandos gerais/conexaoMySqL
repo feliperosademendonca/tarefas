@@ -1,0 +1,24 @@
+const mysql = require ('mysql');
+//const Sequelize = require ("sequelize")
+
+
+//concexão com DB pelo mysql
+const connection = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'130488',
+    database:'projetoToDo'
+});
+
+connection.connect(function(err){
+    if(err) console.error('erro ao conectar pelo mysql connection'
+        + err.stack);return;
+    });
+
+connection.query("delete from tarefas where id =1", function(err,result){
+    if(!err){
+        console.log('deletado com sucesso');
+    }else{
+        console.log('erro ao deletar dados na tabela')
+    }
+});

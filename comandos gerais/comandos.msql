@@ -1,0 +1,15 @@
+
+/*===========add ID tabelas===============*/
+ALTER TABLE `projetoToDo`.`tarefas` 
+ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT AFTER `descricao`,
+ADD PRIMARY KEY (`id`);
+;
+
+/*===========(editar)Update dados tabela===============*/
+update tarefas set titulo = 'título auterada pelo node' where id = 1
+
+/*===========insert na tabela===============*/
+insert into tarefas (titulo, descricao) values ('adicionado pelo node', 'essa entrada foi adcionada pelo node, falta só integrar esse script ao input do from.');
+
+/*===========deleta na tabela===============*/
+delete from tarefas where id =1
