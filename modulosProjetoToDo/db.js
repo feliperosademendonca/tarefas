@@ -1,6 +1,6 @@
 const Sequelize = require ("sequelize");
 //concexão com DB
-const sequelize = new Sequelize ( 'projetoToDo','root','130488',{
+const sequelize = new Sequelize ( 'projetoToDo','root','123456',{
     host:'localhost',// onde está(o endereco do banco de dados)
     dialect: 'mysql',//tipo de banco de dados
 })
