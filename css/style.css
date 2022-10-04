@@ -1,0 +1,96 @@
+:root {
+   --bgColor: brown
+   --fontColorH1: #84b6f4;
+   --fontColorH1Destaque: #fdfd96;
+   --fontColorPlaceHolder:#b0c2f2
+}
+
+*,html{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+ 
+body{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/002/307/811/original/watercolor-pastel-background-hand-painted-aquarelle-colorful-stains-on-paper-vector.jpg');
+    height: 97%;
+    font-family:cursive,Arial, Helvetica, sans-serif;
+    font-size:1em;
+    background-color: #84b6f4;
+}
+
+h1{
+    text-align: center;
+    margin: 10px;
+    color:#fabfb7;
+
+}
+
+
+#addform{
+    margin: auto;
+    width: 500px;
+    height:500px;
+    background-color: rgba(240, 248, 255, 0.493);
+}
+#input-group{
+    margin: 50px;
+
+ 
+ }
+
+input{
+    margin: auto;
+    padding:0px 0px;
+    width: 400px;
+    height: 40px;
+}
+
+::placeholder {
+    padding: 10px; 
+    font-family:cursive,Arial, Helvetica, sans-serif;
+    font-size:1em;
+    color:var(--fontColorPlaceHolder);
+}
+
+textarea{
+    margin: auto;
+    margin-top: 10px;
+    padding: 0px;
+    width: 400px;
+    height: 300px;
+}
+
+button{
+    background-image: linear-gradient(45deg,#eac58f, #ffb6c1);
+    color:brown;
+    margin: auto;
+    margin-top: 10px;
+    width: 400px;
+    height: 40px;
+    font-family:cursive,Arial, Helvetica, sans-serif;
+    font-size:1em;
+ }
+
+footer{
+    position:absolute;
+    text-align: center;
+    top: 96%;
+    left: 50%;
+    transform:translateX(-50%);
+    color:#fff
+}
+
+/*Estilos*/
+.borda{
+    border: 1px solid var(--fontColorPlaceHolder);
+    border-radius: 10px;
+ }
+.sombraFora{
+    box-shadow:1px 3px 12px var(--fontColorPlaceHolder)
+
+}
+.sombraDentro{
+    box-shadow:inset 1px 3px 12px var(--fontColorPlaceHolder)
+}

@@ -1,0 +1,63 @@
+:root {
+   --bgColor: brown
+   --fontColorH1: #84b6f4;
+   --fontColorH1Destaque: #fdfd96;
+   --fontColorPlaceHolder:#b0c2f2
+}
+
+#tarefas{
+    margin: auto;
+    background-color: aliceblue;
+    height: 500px;
+    width: 80%;
+   
+
+}
+
+
+th,tr,td{
+width: 150px;
+height: 50px;
+margin:auto;
+text-align: center;
+
+}
+
+
+/*Estilos*/
+.borda{
+    border: 1px solid var(--fontColorPlaceHolder);
+    border-radius: 10px;
+ }
+.sombraFora{
+    box-shadow:1px 3px 12px var(--fontColorPlaceHolder)
+
+}
+.sombraDentro{
+    box-shadow:inset 1px 3px 12px var(--fontColorPlaceHolder)
+}
+
+.botãoGrande{
+    width: 100%;
+}
+
+.botãoPequeno{
+    width: 100px;
+}
+
+#addNovaTarefa{
+margin: auto;
+margin-bottom: 20px;
+width: 200px;
+transform: translateX(-45%);
+}
+
+.popUp{
+    position: absolute;
+    background-color: #fff;
+    padding: 40px;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+
+  

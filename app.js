@@ -38,10 +38,19 @@ Tarefa.findAll({order:[['id','desc']]}).then(function(tarefas){
         })
 });
 
+app.use(express.static('public'));
+ 
+app.get('/css', function (req, res) {
+    res.sendFile(__dirname+'/css/style.css')
+ }); 
+ app.get('/tabela', function (req, res) {
+    res.sendFile(__dirname+'/css/tabela.css')
+ }); 
+
+
 app.get('/cad', function (req, res) {
     res.render('cad')
  }); 
-
 
 app.post('/add', function (req, res){
     Tarefa.create({
@@ -64,19 +73,17 @@ app.get('/del/:id', function (req,res){
     })
 })
 
-app.get('/update/:id', function (req,res){
-    Tarefa.update({ 
-        titulo:req.body.UpdatetituloTarefa,
-        descricao:req.body.UpDatedescricaoTarefa,
-        
+
+app.post('/update/:id', function (req,res){
+        Tarefa.update(
+        { titulo:req.body.novoTitulo,
+          descricao:req.body.novaDescricao },
+        { where: { 'id': req.params.id } 
     
-}, {
-        where:{
-            'id':req.params.id,
-          }
-    }).then(function(){
+        }).then(function(){
        // res.redirect("/tar")
-        res.redirect("/cad")
+       res.redirect("/tar")
+       res.send(console.log("Atualizado"))
     }).catch(function(erro){
         res.send("!Nâo foi Atualizado; "+erro)
     });

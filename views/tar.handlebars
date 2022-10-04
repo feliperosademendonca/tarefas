@@ -1,23 +1,70 @@
-<h2>Lista de Tarefas</h2>
-<table class="table">
-        <tr>
-            <th>id</th><th>Tarefas</th><th>Descrição</th><th>Criado</th>
-            </tr>
-    {{#each tarefas}}
-        <tr>
-            <td id="txtTitulo">{{id}}</td>
-            <td id="txtTitulo">{{titulo}}</td>
-            <td id="txtDescricao" >{{descricao}}</td>
-            <td id="criado" >{{#formDate createdAt}}{{/formDate}}</td>
-            
-            <td><a><button type="submit" class="btn btn-success">Concluir</button></a></td>
-            <td><a href="update/{{id}}"><button type="submit"class="btn btn-primary">Editar</button></a></td>
-            <td><a href="del/{{id}}"><button type="submit"class="btn btn-danger">Deletar</button> </a></td>
+<h1 class='text-center'>Lista de Tarefas</h1>
+<div id="addNovaTarefa">
+    <a href="/cad"><button type="submit"  class=" borda">Nova Tarefa</button></a>
+</div>
+
+<div id="tarefas" class="borda sombraFora ">
+<div class="linha"></div>
+    <table class="tabela">
+        <tr scop="row">
+            <th scope="col" class="">id</th><th scope="col" class="">Tarefas</th><th scope="col" class="">Descrição</th><th scope="col" class="">Criado</th>
         </tr>
-    {{/each}}
+
+        {{#each tarefas}}
+        <tr scop="row" class="borda  ">
+            <td class="tabelaStyle" scope="col" id="id">{{id}}</td>
+            <td class="tabelaStyle" scope="col" id="txtTitulo">{{titulo}}</td>
+            <td class="tabelaStyle" scope="col" id="txtDescricao" >{{descricao}}</td>
+            <td class="tabelaStyle" scope="col" id="criado" >{{#formDate createdAt}}{{/formDate}}</td>
+            
+            <td scope="col">
+                <a>
+                    <button type="submit" class="botãoPequeno borda">Concluir</button>
+                </a>
+            </td>
+
+            <td scope="col" id="editCol">
+                <a onclick="exibirEditor('cxcEditor{{id}}')">
+                    <button  class="botãoPequeno borda" >Editar</button>
+                </a>
+                <!--Formulário escondido-->
+                <form id="editForm" class="" action="/update/{{id}}" method="post">
+                
+                    <div id="cxcEditor{{id}}" class="popUp borda sombraFora" style="display:none">
+                        <div class="">
+                            <input type="text" name="novoTitulo" id="idNovoTitulo" 
+                            class="borda" value="{{titulo}}" alt="Título da Tarefa">
+                        </div>
+
+                        <div class="">
+                            <textarea type="text" name="novaDescricao" id="idNovaDescricao" 
+                                class="borda"  alt="Descrição da Tarefa">{{descricao}}
+                            </textarea>
+
+                            <button id="btn-exibir"  class="borda" type="submit">Atualizar</button>
+                        </div>
+                    </div>
+                </form>
+            </td>
+
+            <td scope="col">
+                <a href="del/{{id}}"><button type="submit"class="botãoPequeno borda">Deletar</button> </a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+
+</div>
+<script>
+
+function exibirEditor(el) {
+  var display = document.getElementById(el).style.display;
+        if(display == "none")
+            document.getElementById(el).style.display = 'block';
+        else
+            document.getElementById(el).style.display = 'none';
+    }
+</script>
+
+
   
-     <!--  {{#each tarefas}}
-        titulo: {{titulo}} <br>
-        Descrição: {{descricao}}<br>
-        Criado: {{createdAt}}<br>
-    {{/each}}-->
